@@ -1,0 +1,167 @@
+@layer components {
+    #profile_view {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: var(--surface);
+        position: fixed;
+        top: 0%;
+        right: 0%;
+        z-index: 4;
+        width: var(--sect_width);
+
+        .close_view {
+            align-self: flex-end;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            color: var(--text);
+
+            svg {
+                width: calc(var(--header) * 4);
+                height: calc(var(--header) * 4);
+                border-radius: 50%;
+                background-color: var(--muted_text);
+            }
+
+            p {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                font-size: var(--calc_input);
+                width: 90%;
+
+                svg {
+                    width: fit-content;
+                    height: fit-content;
+                    border-radius: none;
+                    background: none;
+                }
+            }
+        }
+    }
+
+    #notification_view {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: var(--calc_input);
+        background-color: var(--surface);
+        position: fixed;
+        top: 0%;
+        right: 0%;
+        z-index: 4;
+        width: var(--sect_width);
+
+        .close_view {
+            align-self: flex-end;
+            height: var(--secondary_text);
+            width: var(--secondary_text);
+        }
+
+        div {
+            width: 100%;
+
+            p {
+                font-size: var(--calc_input);
+                color: var(--text);
+            }
+        }
+    }
+
+    #history_view {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: var(--calc_input);
+        background-color: var(--surface);
+        position: fixed;
+        top: 0%;
+        right: 0%;
+        z-index: 4;
+        width: var(--sect_width);
+
+        .close_view {
+            align-self: flex-end;
+            height: var(--secondary_text);
+            width: var(--secondary_text);
+        }
+
+        #historyView_content {
+            color: var(--text);
+            width: 100%;
+
+            caption {
+                display: flex;
+                flex-direction: row;
+                font-size: var(--secondary_text);
+            }
+
+            li {
+                display: block;
+            }
+
+            .expression {
+                font-size: var(--label);
+                color: var(--muted_text);
+            }
+        }
+    }
+}
+
+@layer utilities {
+    #profile_view {
+        padding: calc(var(--nav_sidePadding)*2.3) var(--nav_gap) calc(var(--nav_sidePadding) / 1.5) var(--nav_gap);
+
+        .close_view {
+            padding: 0;
+        }
+
+        div {
+            svg {
+                padding: var(--nav_padding);
+                gap: var(--nav_gap);
+            }
+
+            p {
+                gap: calc(var(--nav_gap) / 1.5);
+
+                svg {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    #notification_view {
+        padding: calc(var(--nav_sidePadding)*2.3) var(--nav_gap) calc(var(--nav_sidePadding) / 1.5) var(--nav_gap);
+
+        p {
+            margin-bottom: calc(var(--nav_gap) * 1.2);
+        }
+    }
+
+    #history_view {
+        padding: calc(var(--nav_sidePadding)*2.3) var(--nav_sidePadding) var(--nav_sidePadding) var(--nav_gap);
+
+        svg {
+            top: 20%;
+            right: 3%;
+        }
+
+        caption {
+            margin-bottom: calc(var(--nav_gap) * 1.2);
+        }
+    }
+}

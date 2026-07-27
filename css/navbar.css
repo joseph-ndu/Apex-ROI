@@ -1,0 +1,154 @@
+@layer components {
+    #nav_bar {
+        z-index: 10;
+        position: sticky !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 0;
+        background-color: var(--background);
+        width: 100%;
+        font-size: var(--secondary_text);
+        border-bottom: var(--border_wdth) solid var(--text);
+
+        h1 {
+            display: flex;
+            align-items: center;
+            font-family: var(--secondary_display);
+            font-size: var(--header);
+
+            svg {
+                width: calc(var(--header)*1.2);
+                height: var(--header);
+            }
+        }
+
+        #duration {
+            cursor: default;
+            display: flex;
+            align-items: center;
+            font-size: var(--label);
+            background-color: var(--surface);
+            border-radius: var(--border_radius);
+
+            .active_duration {
+                background-color: var(--muted_text);
+                border-radius: var(--border_radius);
+            }
+
+            nav:hover {
+                color: var(--danger);
+            }
+
+            nav:active {
+                color: var(--warning);
+            }
+        }
+
+        #nav_icons {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: var(--secondary_text);
+                height: var(--secondary_text);
+            }
+
+            .profile_opener {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                justify-items: center;
+                background-color: var(--surface);
+                border-radius: 20%;
+
+                .profile {
+                    background-color: var(--muted_text);
+                    border-radius: 100%;
+
+                    &:hover {
+                        filter: brightness(1.2);
+                    }
+
+                    &:active {
+                        filter: brightness(1.35);
+                    }
+                }
+
+                #sideBar_opener:hover {
+                    filter: brightness(1.2);
+                }
+
+                #sideBar_opener:active {
+                    filter: brightness(1.35);
+                }
+
+                #mobile_sidebarOpener {
+                    display: none;
+
+                    &:hover {
+                        filter: brightness(1.2);
+                    }
+
+                    &:active {
+                        filter: brightness(1.35);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+    #nav_bar {
+        padding: calc(var(--nav_padding) * 1.5) var(--nav_sidePadding);
+
+        #duration {
+            gap: var(--nav_gap);
+            padding: calc(var(--nav_gap)/1.5) var(--nav_gap);
+
+            :is(#monthly, #annual) {
+                padding: calc(var(--nav_gap)/2) calc(var(--nav_gap)/1.5);
+            }
+        }
+
+        .profile_opener {
+            padding: calc(var(--nav_gap)/2);
+            margin-left: var(--nav_gap);
+
+            .profile {
+                padding: calc(var(--nav_gap)/20) calc(var(--nav_gap)/2);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    @layer components {
+        #nav_bar {
+            #duration {
+                display: none;
+            }
+
+            #nav_icons {
+                svg {
+                    display: none;
+                }
+
+                .profile_opener {
+                    .profile {
+                        display: none;
+                    }
+
+                    #sideBar_opener {
+                        display: none;
+                    }
+
+                    #mobile_sidebarOpener {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}

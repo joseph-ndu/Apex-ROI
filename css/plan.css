@@ -1,0 +1,86 @@
+@layer components {
+    .plan_select {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h2 {
+            font-size: var(--secondary_text);
+        }
+
+        #plan {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--primary_text);
+
+            button {
+                display: flex;
+                align-items: center;
+                background-color: var(--surface);
+                color: var(--text);
+                font-size: var(--primary_text);
+                border: solid;
+
+                svg {
+                    width: var(--calc_input);
+                    height: var(--calc_input);
+                }
+
+                &:hover {
+                    color: var(--danger);
+                }
+
+                &:active {
+                    color: var(--warning);
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+    .plan_select {
+        height: 70vh;
+
+        h2 {
+            margin-bottom: var(--nav_padding);
+        }
+
+        #plan {
+            gap: var(--nav_gap);
+
+            button {
+                padding: var(--nav_gap);
+                border-radius: var(--border_radius);
+                gap: var(--nav_gap);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    @layer components {
+        .plan_select {
+            flex-direction: column;
+
+            #plan {
+                flex-direction: column;
+
+                button {
+                    width: clamp(9rem, 24vw + 1rem, 30rem);
+                    min-width: -webkit-fill-available;
+                    min-width: fit-content;
+                    justify-content: center;
+                }
+            }
+
+            p {
+                display: none;
+            }
+        }
+    }
+}

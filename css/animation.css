@@ -1,0 +1,49 @@
+@keyframes open {
+    from {
+        transform: none;
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes close {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(14rem);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: none;
+    }
+
+    to {
+        transform: translateX(14rem);
+    }
+}
+
+@keyframes dropdown {
+    from {
+        transform: translateY(-1.7rem);
+    }
+
+    to {
+        transform: none;
+    }
+}

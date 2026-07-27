@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Google Sans Flex";
+    src: url("Fonts\GoogleSansFlex.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("Fonts\Inter.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("Fonts\JetBrainsMono.ttf") format("truetype");
+}
+
+@layer reset, base, components, utilities;
+
+@layer reset {
+    * {
+        z-index: 0;
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+}
+
+@layer base {
+    :root {
+        --primary: rgb(99, 102, 241);
+        --secondary: rgba(79, 70, 229, 0.55);
+        --accent: rgba(16, 185, 129, 0.549);
+        --background: rgb(11, 15, 25);
+        --surface: rgb(30, 41, 59);
+        --text: #f8fafc;
+        --muted_text: #6f7275;
+        --warning: rgb(245, 158, 11);
+        --danger: rgb(239, 68, 68);
+        --primary_display: "Inter", sans-serif;
+        --secondary_display: "Google Sans Flex", sans-serif;
+        --cal_readout: "JetBrains Mono", monospace;
+        --nav_gap: clamp(0.6rem, 0.5vw + 0.1rem, 2.5rem);
+        --nav_padding: clamp(0.7rem, 1vw + 0.5rem, 6rem);
+        --nav_sidePadding: clamp(2rem, 3.5vw + 1rem, 11rem);
+        --header: clamp(1.6rem, 2.5vw + 1rem, 8rem);
+        --primary_text: clamp(1.45rem, 1.7vw + 1rem, 6.5rem);
+        --secondary_text: clamp(1.3rem, 1.5vw + 0.7rem, 5.4rem);
+        --calc_input: clamp(1.15rem, 1.2vw + 0.5rem, 4.8rem);
+        --label: clamp(0.85rem, 0.8vw + 0.5rem, 4rem);
+        --sect_width: clamp(17rem, 30vw + 2rem, 45rem);
+        --sect_gap: clamp(1rem, 2.5vw + 1rem, 8rem);
+        --analytics_input: clamp(13rem, 25vw + 2rem, 30rem);
+        --border_wdth: clamp(0.05rem, 0.15vw + 0.02rem, 0.7rem);
+        --border_radius: clamp(0.7rem, 1vw + 0.5rem, 3rem);
+        --analytics_sidePadding: clamp(1.5rem, 2.8vw + 1rem, 8rem);
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 100%;
+        background-color: var(--background);
+        color: var(--text);
+        font-family: var(--primary_display);
+        overflow: hidden;
+        height: 100vh;
+        height: 100dvh;
+        width: 100vw;
+
+        #content {
+            flex: 1;
+
+            position: relative;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100dvh;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    @layer base {
+        body {
+            font-size: 75%;
+        }
+    }
+}

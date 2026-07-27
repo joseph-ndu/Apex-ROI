@@ -1,0 +1,265 @@
+@layer components {
+    main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        #calculator {
+            display: flex;
+            flex-direction: column;
+
+            #display {
+                display: flex;
+                flex-direction: column;
+                background-color: var(--surface);
+                border: var(--border_wdth) solid var(--secondary);
+                border-radius: var(--border_radius);
+                box-shadow: 0 4px 6px -1px var(--secondary);
+
+                #display_one {
+                    color: var(--muted_text);
+                    font-size: var(--label);
+                }
+
+                input {
+                    border: none;
+                    outline: none;
+                    background-color: var(--surface);
+                    color: var(--text);
+                    font-family: var(--cal_readout);
+                    font-size: var(--calc_input);
+                    width: 100%;
+
+                    &::placeholder {
+                        font-family: var(--primary_display);
+                    }
+                }
+            }
+
+            #btns {
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                background-color: var(--surface);
+                border-radius: var(--border_radius);
+
+                button {
+                    grid-column: span 2;
+                    font-size: var(--calc_input);
+                    background-color: var(--muted_text);
+                    color: var(--text);
+                    border: none;
+                    border-radius: var(--border_radius);
+
+                    &:hover {
+                        filter: brightness(1.2);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                        opacity: 0.8;
+                    }
+                }
+
+                :is(.operators, .bracket_open, .bracket_close) {
+                    background-color: var(--surface);
+                    border: var(--border_wdth) solid var(--secondary);
+                    box-shadow: 0 4px 6px -1px var(--secondary);
+                }
+
+                :is(.equate) {
+                    background-color: var(--surface);
+                    border: var(--border_wdth) solid var(--accent);
+                    box-shadow: 0 4px 6px -1px var(--accent);
+                }
+
+                :is(.clear, .del) {
+                    background-color: var(--danger);
+                }
+
+                .bracket_open {
+                    grid-column: span 1;
+                    border-top-right-radius: 0%;
+                    border-bottom-right-radius: 0%;
+                }
+
+                .bracket_close {
+                    grid-column: span 1;
+                    border-top-left-radius: 0%;
+                    border-bottom-left-radius: 0%;
+                }
+            }
+
+            .input_monthly_total {
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    font-size: var(--label);
+
+                    span {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    input {
+                        font-family: var(--cal_readout);
+                        font-size: var(--calc_input);
+                        color: var(--text);
+                        background: none;
+                        border: var(--border_wdth) solid var(--secondary);
+                        border-radius: var(--border_radius);
+                        outline: none;
+                        box-shadow: 0 4px 6px -1px var(--secondary);
+
+                        &:focus {
+                            background-color: var(--surface);
+                        }
+                    }
+                }
+
+                button {
+                    font-size: var(--calc_input);
+                    color: var(--text);
+                    border: none;
+                    border-radius: var(--border_radius);
+                    background-color: var(--secondary);
+                    box-shadow: 0 4px 6px -1px var(--secondary);
+
+                    &:active {
+                        transform: scale(0.9);
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        #backTo_calc {
+            display: none;
+        }
+
+        #analytics_panel {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: var(--border_wdth) solid var(--accent);
+            border-radius: var(--border_radius);
+            box-shadow: 0 4px 6px -1px var(--accent);
+
+            h2 {
+                font-size: var(--secondary_text);
+            }
+
+            label {
+                font-size: var(--label);
+
+                input {
+                    font-size: var(--header);
+                    font-weight: bold;
+                    color: var(--text);
+                    background: none;
+                    border: none;
+                    outline: none;
+                }
+
+                #tier {
+                    color: var(--danger);
+                }
+
+                #est_savings {
+                    display: flex;
+                    align-items: center;
+                    color: var(--accent);
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+    main {
+        padding: var(--nav_padding) var(--nav_sidePadding);
+        gap: var(--sect_gap);
+
+        #calculator {
+            width: var(--sect_width);
+            gap: var(--nav_gap);
+            padding: var(--nav_gap);
+
+            #display {
+                width: 100%;
+                padding: var(--nav_gap);
+            }
+
+            #btns {
+                gap: var(--nav_gap);
+                padding: var(--nav_gap);
+            }
+
+            .input_monthly_total {
+                padding: 0;
+                width: 100%;
+
+                label {
+                    margin-top: var(--nav_gap);
+
+                    input {
+                        margin-top: var(--nav_gap);
+                        padding: var(--nav_gap);
+                    }
+                }
+
+                button {
+                    margin-left: var(--nav_gap);
+                    padding: var(--nav_gap);
+                }
+            }
+        }
+
+        #analytics_panel {
+            gap: var(--nav_padding);
+            padding: var(--nav_gap) var(--nav_gap) var(--nav_gap) var(--analytics_sidePadding);
+            width: var(--sect_width);
+
+            .horizontal_line {
+                position: absolute;
+                left: 5%;
+                background-color: var(--accent);
+                height: 95%;
+                width: var(--border_wdth);
+            }
+
+            input {
+                margin-top: var(--nav_padding);
+                width: var(--analytics_input);
+                box-sizing: border-box;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    @layer components {
+        main {
+            #backTo_calc {
+                display: none;
+                position: absolute;
+                top: 8%;
+                left: 8%;
+                z-index: 20;
+            }
+
+            #analytics_panel {
+                display: none;
+            }
+        }
+    }
+
+    @layer utilities {
+        main {
+            padding: var(--nav_sidePadding) var(--nav_padding);
+        }
+    }
+}
