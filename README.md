@@ -9,6 +9,9 @@ Apex ROI is a responsive SaaS-inspired ROI calculator built with **HTML, CSS, an
 ## Preview
 
 ![Desktop Screenshot](assets/screenshot-desktop.png)
+
+---
+
 ![Mobile Screenshot](assets/screenshot-mobile.png)
 
 ---
