@@ -95,8 +95,14 @@ Apex-ROI/
 │   ├── calculator.js
 │   └── analytics.js
 │
-├── fonts/
+├── Fonts/
+│   ├── GoogleSansFlex.ttf
+│   ├── Inter.ttf
+│   └── JetBrainsMono.ttf
+|
 └── assets/
+│   ├── screenshot-desktop.png
+│   └── screenshot-mobile.png
 ```
 
 ---
