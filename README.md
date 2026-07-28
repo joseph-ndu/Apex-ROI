@@ -101,8 +101,8 @@ Apex-ROI/
 │   └── JetBrainsMono.ttf
 |
 └── assets/
-│   ├── screenshot-desktop.png
-│   └── screenshot-mobile.png
+    ├── screenshot-desktop.png
+    └── screenshot-mobile.png
 ```
 
 ---
