@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Google Sans Flex";
-    src: url("Fonts\GoogleSansFlex.ttf") format("truetype");
+    src: url("../Fonts/GoogleSansFlex.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Inter";
-    src: url("Fonts\Inter.ttf") format("truetype");
+    src: url("../Fonts/Inter.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "JetBrains Mono";
-    src: url("Fonts\JetBrainsMono.ttf") format("truetype");
+    src: url("../Fonts/JetBrainsMono.ttf") format("truetype");
 }
 
 @layer reset, base, components, utilities;
