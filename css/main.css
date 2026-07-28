@@ -22,6 +22,10 @@
                     font-size: var(--label);
                 }
 
+                #display_two:placeholder-shown {
+                    font-size: var(--placeholder_text);
+                }
+
                 input {
                     border: none;
                     outline: none;
@@ -206,12 +210,14 @@
                     margin-top: var(--nav_gap);
 
                     input {
-                        margin-top: var(--nav_gap);
+                        margin-top: calc(var(--nav_gap) / 1.5);
                         padding: var(--nav_gap);
+                        width: 85%;
                     }
                 }
 
                 button {
+                    margin-top: calc(var(--nav_gap) / 1.5);
                     margin-left: var(--nav_gap);
                     padding: var(--nav_gap);
                 }
